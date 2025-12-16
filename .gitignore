@@ -1,0 +1,15 @@
+# data artifacts
+data/*
+!data/.gitkeep
+
+# secrets
+secrets/*
+*.env
+
+# large files
+*.csv
+*.zip
+*.parquet
+
+# python
+__pycache__/
