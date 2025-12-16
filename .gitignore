@@ -1,6 +1,9 @@
 # data artifacts
 data/*
 !data/.gitkeep
+pgdata/
+logs/
+plugins/
 
 # secrets
 secrets/*
