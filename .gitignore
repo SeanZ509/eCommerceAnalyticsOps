@@ -1,18 +1,12 @@
-# data artifacts
 data/*
 !data/.gitkeep
 pgdata/
 logs/
 plugins/
-
-# secrets
+data/
 secrets/*
 *.env
-
-# large files
 *.csv
 *.zip
 *.parquet
-
-# python
 __pycache__/
