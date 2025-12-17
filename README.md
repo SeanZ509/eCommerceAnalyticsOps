@@ -20,10 +20,10 @@ Orders, Order items, Products, Users (customers)
 4. Docker ensures full reproducibility across environments
 
 ## KPIs
-Daily & Monthly Revenue
-Order Count & Item Volume
-Average Order Value (AOV)
-Revenue by Product Category
+Daily & Monthly Revenue,
+Order Count & Item Volume,
+Average Order Value (AOV),
+Revenue by Product Category,
 Customer Retention
 
 ## Future Improvements
