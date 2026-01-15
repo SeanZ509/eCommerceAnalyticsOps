@@ -35,12 +35,12 @@ The dataset was treated as raw operational data and transformed into analytics-r
 - **SQL transformation layers** produce clean, documented KPI logic
 - **Docker** ensures reproducible environments across systems
 
-## KPIs
-Daily & Monthly Revenue,
-Order Count & Item Volume,
-Average Order Value (AOV),
-Revenue by Product Category,
-Customer Retention
-
+## Key Performance Indicators (KPIs)
+- Daily and Monthly Revenue
+- Order Volume and Item Volume
+- Average Order Value (AOV)
+- Revenue by Product Category
+- Customer Retention Metrics
+  
 ## Future Improvements
 TBD
