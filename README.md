@@ -1,8 +1,5 @@
 # E-Commerce Analytics Pipeline & KPI Reporting System
 
-## Key Technologies
-Apache Airflow - Docker - PostgreSQL - Python - SQL - Power BI
-
 ## Executive Summary
 This project demonstrates how raw eCommerce operational data can be transformed into reliable, analytics-ready datasets that support recurring KPI reporting and business decision-making.
 
@@ -41,6 +38,16 @@ The dataset was treated as raw operational data and transformed into analytics-r
 - Average Order Value (AOV)
 - Revenue by Product Category
 - Customer Retention Metrics
+
+## Reporting & Visualization
+Power BI dashboards were built on top of analytics-ready SQL views to:
+- Monitor revenue trends
+- Compare product category performance
+- Analyze customer retention behavior
   
 ## Future Improvements
-TBD
+- Incremental loading to support larger datasets and reduce processing time
+- Data quality checks (row counts, null checks, schema validation)
+- Slowly changing dimensions for customer and product attributes
+- Parameterized KPI logic for multi-region or multi-brand reporting
+- Migration to a cloud data warehouse (e.g., BigQuery, Redshift, Snowflake)
