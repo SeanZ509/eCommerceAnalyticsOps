@@ -1,12 +1,12 @@
-# eCommerceAnalyticsOps Data Pipeline
+# E-Commerce Analytics Pipeline & KPI Reporting System
 
 ## Key Technologies
 Apache Airflow - Docker - PostgreSQL - Python - SQL - Power BI
 
-## Description
-This project implements an end-to-end analytics pipeline for a large, multi-table eCommerce dataset representing a single business.
+## Executive Summary
+This project demonstrates how raw eCommerce operational data can be transformed into reliable, analytics-ready datasets that support recurring KPI reporting and business decision-making.
 
-The pipeline automates ingestion, transformation, and loading of data into a relational database, where SQL-based analytics views are built for downstream reporting and visualization. The focus is on transforming raw operational data into reliable, analytics-ready structures that support KPI reporting and business insights.
+I designed and implemented an end-to-end analytics pipeline that automates data ingestion, transformation, and validation using SQL and Python, and delivers standardized KPIs through BI dashboards. The pipeline emphasizes data quality, reproducibility, and separation of raw vs analytical data — patterns commonly used in production analytics environments.
 
 ## Dataset
 theLook eCommerce Dataset (fictional business data)
