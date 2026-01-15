@@ -8,10 +8,14 @@ This project demonstrates how raw eCommerce operational data can be transformed 
 
 I designed and implemented an end-to-end analytics pipeline that automates data ingestion, transformation, and validation using SQL and Python, and delivers standardized KPIs through BI dashboards. The pipeline emphasizes data quality, reproducibility, and separation of raw vs analytical data — patterns commonly used in production analytics environments.
 
-## Dataset
-theLook eCommerce Dataset (fictional business data)
-Multi-table structure including:
-Orders, Order items, Products, Users (customers)
+## Business Context
+Leadership and operations teams need consistent, trustworthy metrics to monitor revenue performance, customer behavior, and product trends. Manual reporting and inconsistent transformations create risk and slow decision-making.
+
+Simulates a real eCommerce business environment where analysts must:
+- Ingest raw transactional data
+- Apply repeatable transformations
+- Define consistent KPI logic
+- Deliver insights via dashboards
 
 ## ETL Process
 1. Airflow orchestrates repeatable, idempotent ETL tasks
