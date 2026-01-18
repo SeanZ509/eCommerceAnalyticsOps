@@ -1,4 +1,3 @@
--- sql/analytics_fact_views.sql
 CREATE SCHEMA IF NOT EXISTS analytics;
 
 CREATE OR REPLACE VIEW analytics.fact_order_revenue AS
