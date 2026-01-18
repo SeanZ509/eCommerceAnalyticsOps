@@ -1,30 +1,53 @@
-# eCommerceAnalyticsOps Data Pipeline
+# E-Commerce Analytics Pipeline & KPI Reporting System
 
-## Key Technologies
-Apache Airflow - Docker - PostgreSQL - Python - SQL - Power BI
+## Executive Summary
+This project demonstrates how raw eCommerce operational data can be transformed into reliable, analytics-ready datasets that support recurring KPI reporting and business decision-making.
 
-## Description
-This project implements an end-to-end analytics pipeline for a large, multi-table eCommerce dataset representing a single business.
+I designed and implemented an end-to-end analytics pipeline that automates data ingestion, transformation, and validation using SQL and Python, and delivers standardized KPIs through BI dashboards. The pipeline emphasizes data quality, reproducibility, and separation of raw vs analytical data — patterns commonly used in production analytics environments.
 
-The pipeline automates ingestion, transformation, and loading of data into a relational database, where SQL-based analytics views are built for downstream reporting and visualization. The focus is on transforming raw operational data into reliable, analytics-ready structures that support KPI reporting and business insights.
+## Business Context
+Leadership and operations teams need consistent, trustworthy metrics to monitor revenue performance, customer behavior, and product trends. Manual reporting and inconsistent transformations create risk and slow decision-making.
+
+Simulates a real eCommerce business environment:
+- Ingest raw transactional data
+- Apply repeatable transformations
+- Define consistent KPI logic
+- Deliver insights via dashboards
 
 ## Dataset
-theLook eCommerce Dataset (fictional business data)
-Multi-table structure including:
-Orders, Order items, Products, Users (customers)
+**theLook eCommerce Dataset** (fictional business data)
 
-## ETL Process
-1. Airflow orchestrates repeatable, idempotent ETL tasks
-2. PostgreSQL serves as the analytical warehouse
-3. Raw data is preserved separately from analytics-ready views
-4. Docker ensures full reproducibility across environments
+Multi-table relational structure including:
+- Orders
+- Order Items
+- Products
+- Users (Customers)
 
-## KPIs
-Daily & Monthly Revenue,
-Order Count & Item Volume,
-Average Order Value (AOV),
-Revenue by Product Category,
-Customer Retention
+The dataset was treated as raw operational data and transformed into analytics-ready structures using SQL and Python.
 
+## Architecture & ETL Process
+- **Apache Airflow** orchestrates repeatable, idempotent ETL workflows
+- **PostgreSQL** serves as the analytics warehouse
+- **Raw tables** are preserved separately from analytics views
+- **SQL transformation layers** produce clean, documented KPI logic
+- **Docker** ensures reproducible environments across systems
+
+## Key Performance Indicators (KPIs)
+- Daily and Monthly Revenue
+- Order Volume and Item Volume
+- Average Order Value (AOV)
+- Revenue by Product Category
+- Customer Retention Metrics
+
+## Reporting & Visualization
+Power BI dashboards were built on top of analytics-ready SQL views to:
+- Monitor revenue trends
+- Compare product category performance
+- Analyze customer retention behavior
+  
 ## Future Improvements
-TBD
+- Incremental loading to support larger datasets and reduce processing time
+- Data quality checks (row counts, null checks, schema validation)
+- Slowly changing dimensions for customer and product attributes
+- Parameterized KPI logic for multi-region or multi-brand reporting
+- Migration to a cloud data warehouse (e.g., BigQuery, Redshift, Snowflake)
