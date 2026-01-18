@@ -5,7 +5,7 @@ SELECT
   o.order_id,
   o.user_id,
   o.created_at::date AS order_date,
-  SUM(oi.sale_price) AS order_revenue,
+  SUM(NULLIF(oi.sale_price, '')::numeric) AS order_revenue,
   COUNT(*) AS items_count
 FROM raw.orders o
 JOIN raw.order_items oi
@@ -19,7 +19,7 @@ SELECT
   o.user_id,
   o.created_at::date AS order_date,
   oi.product_id,
-  oi.sale_price,
+  NULLIF(oi.sale_price, '')::numeric AS sale_price,
   1 AS item_qty
 FROM raw.orders o
 JOIN raw.order_items oi
