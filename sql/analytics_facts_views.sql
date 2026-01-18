@@ -1,7 +1,6 @@
 -- sql/analytics_fact_views.sql
 CREATE SCHEMA IF NOT EXISTS analytics;
 
--- 1) Order-level revenue (keeps user_id + order_id + date)
 CREATE OR REPLACE VIEW analytics.fact_order_revenue AS
 SELECT
   o.order_id,
@@ -14,3 +13,15 @@ JOIN raw.order_items oi
   ON oi.order_id = o.order_id
 GROUP BY
   o.order_id, o.user_id, o.created_at::date;
+
+CREATE OR REPLACE VIEW analytics.fact_order_items AS
+SELECT
+  o.order_id,
+  o.user_id,
+  o.created_at::date AS order_date,
+  oi.product_id,
+  oi.sale_price,
+  1 AS item_qty
+FROM raw.orders o
+JOIN raw.order_items oi
+  ON oi.order_id = o.order_id;
