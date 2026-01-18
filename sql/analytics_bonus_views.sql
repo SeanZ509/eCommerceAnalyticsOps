@@ -3,9 +3,10 @@ CREATE SCHEMA IF NOT EXISTS analytics;
 CREATE OR REPLACE VIEW analytics.dim_quarter AS
 WITH bounds AS (
   SELECT
-    date_trunc('quarter', MIN(created_at))::date AS min_q,
-    date_trunc('quarter', MAX(created_at))::date AS max_q
+    date_trunc('quarter', MIN(created_at::timestamp))::date AS min_q,
+    date_trunc('quarter', MAX(created_at::timestamp))::date AS max_q
   FROM raw.orders
+  WHERE created_at IS NOT NULL AND created_at <> ''
 )
 SELECT
   gs::date AS quarter_start,
@@ -22,15 +23,15 @@ SELECT
   u.gender,
   u.state,
   u.country,
-  u.age,
+  NULLIF(u.age,'')::int AS age,
   CASE
-    WHEN u.age IS NULL THEN 'unknown'
-    WHEN u.age < 18 THEN '<18'
-    WHEN u.age BETWEEN 18 AND 24 THEN '18-24'
-    WHEN u.age BETWEEN 25 AND 34 THEN '25-34'
-    WHEN u.age BETWEEN 35 AND 44 THEN '35-44'
-    WHEN u.age BETWEEN 45 AND 54 THEN '45-54'
-    WHEN u.age BETWEEN 55 AND 64 THEN '55-64'
+    WHEN NULLIF(u.age,'') IS NULL THEN 'unknown'
+    WHEN NULLIF(u.age,'')::int < 18 THEN '<18'
+    WHEN NULLIF(u.age,'')::int BETWEEN 18 AND 24 THEN '18-24'
+    WHEN NULLIF(u.age,'')::int BETWEEN 25 AND 34 THEN '25-34'
+    WHEN NULLIF(u.age,'')::int BETWEEN 35 AND 44 THEN '35-44'
+    WHEN NULLIF(u.age,'')::int BETWEEN 45 AND 54 THEN '45-54'
+    WHEN NULLIF(u.age,'')::int BETWEEN 55 AND 64 THEN '55-64'
     ELSE '65+'
   END AS age_group,
   cq.orders,
@@ -99,10 +100,11 @@ ORDER BY 1, revenue DESC;
 CREATE OR REPLACE VIEW analytics.fulfillment_kpis_quarterly AS
 WITH t AS (
   SELECT
-    date_trunc('quarter', created_at)::date AS quarter_start,
-    EXTRACT(EPOCH FROM (shipped_at - created_at)) / 3600.0 AS hours_to_ship
+    date_trunc('quarter', created_at::timestamp)::date AS quarter_start,
+    EXTRACT(EPOCH FROM (shipped_at::timestamp - created_at::timestamp)) / 3600.0 AS hours_to_ship
   FROM raw.orders
-  WHERE shipped_at IS NOT NULL AND created_at IS NOT NULL
+  WHERE created_at IS NOT NULL AND created_at <> ''
+    AND shipped_at IS NOT NULL AND shipped_at <> ''
 )
 SELECT
   quarter_start,
