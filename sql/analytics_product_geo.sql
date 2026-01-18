@@ -12,3 +12,16 @@ LEFT JOIN raw.products p
 GROUP BY
   date_trunc('quarter', oi.order_date)::date, COALESCE(p.category, 'unknown')
 ORDER BY quarter_start, revenue DESC;
+
+CREATE OR REPLACE VIEW analytics.state_quarterly AS
+SELECT
+  date_trunc('quarter', o.order_date)::date AS quarter_start,
+  COALESCE(u.state, 'unknown') AS state,
+  COUNT(DISTINCT o.order_id) AS orders,
+  SUM(o.order_revenue) AS revenue
+FROM analytics.fact_order_revenue o
+JOIN raw.users u
+  ON u.id = o.user_id
+GROUP BY
+  date_trunc('quarter', o.order_date)::date, COALESCE(u.state, 'unknown')
+ORDER BY quarter_start, revenue DESC;
