@@ -25,3 +25,14 @@ SELECT
 FROM raw.orders o
 JOIN raw.order_items oi
   ON oi.order_id = o.order_id;
+
+CREATE OR REPLACE VIEW analytics.customer_quarterly AS
+SELECT
+  user_id,
+  date_trunc('quarter', order_date)::date AS quarter_start,
+  COUNT(DISTINCT order_id) AS orders,
+  SUM(order_revenue) AS revenue,
+  AVG(order_revenue) AS aov
+FROM analytics.fact_order_revenue
+GROUP BY
+  user_id, date_trunc('quarter', order_date)::date;
