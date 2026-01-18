@@ -30,3 +30,18 @@ JOIN first_order f
   ON f.user_id = q.user_id
 GROUP BY q.quarter_start
 ORDER BY q.quarter_start;
+
+CREATE OR REPLACE VIEW analytics.customer_profile_quarterly AS
+SELECT
+  cq.quarter_start,
+  u.id AS user_id,
+  u.gender,
+  u.age,
+  u.state,
+  u.country,
+  cq.orders,
+  cq.revenue,
+  cq.aov
+FROM analytics.customer_quarterly cq
+JOIN raw.users u
+  ON u.id = cq.user_id;
