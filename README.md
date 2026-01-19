@@ -114,13 +114,37 @@ Power BI dashboards were built on top of analytics‑ready SQL views to:
 * Visualize regional sales distribution and growth drivers
 * Identify pricing and volume trade‑offs across products
 
-### Selected Dashboards
+## Dashboards & Visualizations
 
-* Revenue Distribution by State (Filled Map)
-* Product Pricing vs Sales Volume (Scatter Plot)
-* Quarter‑over‑Quarter Order Growth (%)
-* Category Revenue Trends (Quarterly)
-* Customer Retention Rate by Quarter
+### Business Performance
+
+![Business Performance](Ecom_Totals.png)
+
+*Totals for the business as a whole from start to current date.*
+
+### Product Category Performance
+
+![Product Category Performance](Ecom_Categories.png)
+
+*Total revenue and order trends by product category highlighting top-performing segments.*
+
+### Regional Revenue - US
+
+![Regional Performance](Ecom_Regional.png)
+
+*Revenue by States in the U.S; lighter colors = least sales, darker colors = highest sales.*
+
+### Customer Retention Rate - US
+
+![Customer Retention Rate](Ecom_RepeatCust.png)
+
+*Rate that customers return to place atleast a 2nd order.*
+
+### Quarter Growth and Average order price Quarterly - US
+
+![Quarter Over Quarter Growth](Ecom_QOQ&AOV.png)
+
+*Quarter by Quarter growth, and average order price quarterly.*
 
 ---
 
