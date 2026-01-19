@@ -44,6 +44,13 @@ Power BI dashboards were built on top of analytics-ready SQL views to:
 - Monitor revenue trends
 - Compare product category performance
 - Analyze customer retention behavior
+
+## Conclusions Learned
+- Company is in a growth phase; growing in orders, revenue, and returning customers steadily each year
+- $10.76 Million total revenue, over 166 Thousand total orders, Average order price of $64.71
+- Returning Customer Rate: 37.51%
+- Category with top sales: Intimates, Category with highest revenue: Outerwear and Coats
+- Top Selling U.S state is California, with global sales in Europe, Australia, Asia, and South America
   
 ## Future Improvements
 - Incremental loading to support larger datasets and reduce processing time
