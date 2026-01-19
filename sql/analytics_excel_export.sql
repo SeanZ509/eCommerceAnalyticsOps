@@ -1,9 +1,12 @@
+CREATE SCHEMA IF NOT EXISTS analytics;
+
 CREATE OR REPLACE VIEW analytics.excel_sales_model AS
 SELECT
     o.order_id,
-    o.created_at::date AS order_date,
+    o.created_at::timestamp::date AS order_date,
+
     u.id AS customer_id,
-    u.age,
+    NULLIF(u.age,'')::int AS age,
     u.gender,
     u.state,
     u.country,
@@ -13,9 +16,9 @@ SELECT
     p.category,
     p.department,
 
-    oi.quantity,
+    1 AS quantity,
     oi.sale_price::numeric AS unit_price,
-    (oi.quantity * oi.sale_price::numeric) AS revenue
+    oi.sale_price::numeric AS revenue
 
 FROM raw.orders o
 JOIN raw.order_items oi ON o.order_id = oi.order_id
