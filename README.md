@@ -116,35 +116,43 @@ Power BI dashboards were built on top of analytics‑ready SQL views to:
 
 ## Dashboards & Visualizations
 
-### Business Performance
+### Business Performance Overview
 
 ![Business Performance](Ecom_Totals.png)
 
-*Totals for the business as a whole from start to current date.*
+*Total revenue and order volume for the business from launch through the current reporting period.*
+
+---
 
 ### Product Category Performance
 
 ![Product Category Performance](Ecom_Categories.png)
 
-*Total revenue and order trends by product category highlighting top-performing segments.*
+*Revenue and order trends by product category highlighting top-performing segments and category growth patterns.*
 
-### Regional Revenue - US
+---
+
+### U.S. Regional Revenue Distribution
 
 ![Regional Performance](Ecom_Regional.png)
 
-*Revenue by States in the U.S; lighter colors = least sales, darker colors = highest sales.*
+*Revenue distribution by U.S. state, with darker shading indicating higher sales concentration.*
 
-### Customer Retention Rate - US
+---
+
+### Customer Retention Rate (U.S.)
 
 ![Customer Retention Rate](Ecom_RepeatCust.png)
 
-*Rate that customers return to place atleast a 2nd order.*
+*Percentage of customers placing repeat orders, segmented by time period and region.*
 
-### Quarter Growth and Average order price Quarterly - US
+---
+
+### Quarter-over-Quarter Growth & Average Order Value
 
 ![Quarter Over Quarter Growth](Ecom_QOQ&AOV.png)
 
-*Quarter by Quarter growth, and average order price quarterly.*
+*Quarterly order growth rates alongside average order value trends to assess seasonality and pricing performance.*
 
 ---
 
